@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DriveDesk</title>
+  <meta name="color-scheme" content="light dark">
+  <script>
+    // Apply a saved theme before first paint; with no choice saved, the OS setting decides (see styles.css).
+    try { var t = localStorage.getItem('dd-theme'); if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231B1F24'/%3E%3Cpath d='M9 8v16M14 8v16M19 8v16M24 8v16' stroke='%23fff' stroke-width='2.4' stroke-linecap='round'/%3E%3Cpath d='M5 21L28 11' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' opacity='.6'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip" href="#view">Skip to content</a>
+
+  <header class="top">
+    <div class="top-in">
+      <a class="brand" href="#/overview" aria-label="DriveDesk, home">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5v14M10 5v14M14 5v14M18 5v14"/><path d="M3 16L21 8" opacity=".55"/></svg>
+        <span>DriveDesk</span>
+      </a>
+      <nav class="tabs" id="nav" aria-label="Primary">
+        <a href="#/overview" data-route="overview">Overview</a>
+        <a href="#/log" data-route="log">Log donation</a>
+        <a href="#/inventory" data-route="inventory">Inventory<span class="count" id="nav-badge" hidden></span></a>
+        <a href="#/needs" data-route="needs">Needs</a>
+        <a href="#/beneficiaries" data-route="beneficiaries">Beneficiaries</a>
+        <a href="#/distribution" data-route="distribution">Distribution</a>
+        <a href="#/reports" data-route="reports">Reports</a>
+        <a href="#/drive" data-route="drive">Drive</a>
+      </nav>
+      <div class="tools">
+        <form class="search" id="search" role="search">
+          <label class="sr-only" for="q">Search inventory</label>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <input id="q" type="search" placeholder="Search stock" autocomplete="off">
+          <kbd aria-hidden="true">/</kbd>
+        </form>
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to dark mode"></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="ctx" id="dateline" aria-live="polite"></div>
+  <main class="page" id="view" tabindex="-1"></main>
+  <footer class="foot">
+    <div class="foot-in">
+      <span>Object Oriented Programming · Academic Year 2026-2027</span>
+      <span>Soumya Narang · Vedika Dalmia</span>
+    </div>
+  </footer>
+  <div id="tip" role="tooltip" hidden></div>
+  <script src="/app.js"></script>
+</body>
+</html>
