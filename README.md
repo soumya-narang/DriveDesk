@@ -2,8 +2,6 @@
 
 A console-based Java application that helps colleges, NGOs, housing societies and community groups **run donation drives without chaos**: track what has been collected, what is still needed, what is about to expire, and who has received what.
 
-Built as an **Object-Oriented Programming (Java) mini project**, with every major OOP concept used for a real reason, not just for show.
-
 ---
 
 ## 1. The Problem
@@ -39,13 +37,13 @@ Donation Drive Manager gives a drive organiser one place to:
 | Interface | Console (`Scanner`) | Keeps the focus on OOP, not UI |
 | Storage | CSV text files (`java.io`) | Covers file I/O from the syllabus; human-readable |
 | Dates | `java.time.LocalDate` | Clean expiry calculations |
-| Build | Plain `javac` / `java` | No frameworks; every line is yours |
+| Build | Plain `javac` / `java` | No frameworks; every line is mine |
 
 ---
 
 ## 4. Project Structure
 
-```
+```text
 donation-drive-manager/
 ├── README.md
 ├── data/                         # created at runtime
@@ -98,7 +96,7 @@ donation-drive-manager/
 
 The app follows a simple **layered architecture**. Each layer only talks to the layer directly below it.
 
-```
+```text
 ┌────────────────────────────────────────────┐
 │  app          DonationDriveApp (menu/UI)   │  reads input, prints output
 ├────────────────────────────────────────────┤
@@ -350,7 +348,7 @@ public DonationItem pickNextItem(Category category) {
 - `saveAll(Drive drive)`: writes each list to its CSV using `toCsv()`.
 - `loadAll()`: reads the CSVs back, using the `type` column to decide which subclass to create.
 
-```
+```text
 # items.csv
 type,itemId,name,quantity,donorId,receivedOn,extra1,extra2
 FOOD,I001,Rice 5kg,40,D001,2026-10-01,2026-12-31,false
@@ -416,7 +414,7 @@ Where every syllabus concept appears, ready for the viva:
 
 ## 9. Main Menu Flow
 
-```
+```text
 ===== DONATION DRIVE MANAGER =====
  1. Register donor
  2. Log a donation
@@ -433,7 +431,7 @@ Where every syllabus concept appears, ready for the viva:
 
 ### Sample run
 
-```
+```text
 > 6
 --- Expiring within 7 days ---
 [FOOD]     I007  Bread packets   x30   expires in 2 days  ⚠
@@ -474,7 +472,7 @@ java -cp out app.DonationDriveApp
 
 ---
 
-## 11. Build Plan 
+## 11. Build Plan
 
 | Step | Build | Concepts practised |
 |---|---|---|
@@ -512,6 +510,6 @@ In real drives, only **sealed, unexpired, over-the-counter** medicines should be
 
 ## Author
 
-**Soumya Narang**
-B.Tech CSE, Manipal University Jaipur
+**Soumya Narang**  
+B.Tech CSE, Manipal University Jaipur  
 Object Oriented Programming using Java: Mini Project
