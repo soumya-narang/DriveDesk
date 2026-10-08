@@ -474,7 +474,7 @@ java -cp out app.DonationDriveApp
 
 ---
 
-## 11. Build Plan (suggested order)
+## 11. Build Plan 
 
 | Step | Build | Concepts practised |
 |---|---|---|
